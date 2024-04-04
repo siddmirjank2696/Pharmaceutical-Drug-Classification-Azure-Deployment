@@ -36,10 +36,6 @@ def predict():
     # Retrieving the data from an HTML form
     img_file = request.files['image']
 
-    # # Creating a temporary file to save the uploaded image
-    # temp_file = tempfile.NamedTemporaryFile(delete=False)
-    # img_file.save(temp_file.name)
-
      # Saving the uploaded image to the static folder
     img_filename = f"static/{img_file.filename}"
     img_file.save(img_filename)
@@ -66,5 +62,5 @@ def predict():
 
 # Creating a main function
 if __name__ == "__main__":
-    # Allowing debugging of the app and hosting it on my local host at port 4001
+    # Allowing debugging of the app and hosting it on my local host at port 4002
     app.run(debug=True, host='0.0.0.0', port=4002)
