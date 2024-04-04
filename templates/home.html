@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Setting the title of the prediction page -->
+    <title>Pharmaceutical Drug Classification</title>
+
+    <!-- Formatting the prediction page -->
+    <style>
+
+        body
+        {
+            background-color: aqua;
+        }
+
+        h1
+        {
+            color: red;
+            text-align: center;
+            font-size: 300%;
+        }
+
+        h2
+        {
+            color: red;
+            text-align: center;
+            font-size: 200%;
+        }
+
+        h3
+        {
+            color: red;
+            text-align: center;
+            font-size: 200%;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Writing the header text for the prediction page -->
+    <h1>
+        Pharmaceutical Drug Classification
+    </h1>
+    <br><br><br><br>
+
+    <!-- Creating a form to input new data for prediction -->
+    <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+        
+        <div>
+            <h2>
+                <label for="image">Upload The Image To Be Predicted<br></label>
+                <br>
+                <input type="file" id="image", name="image", required="required" accept="image/*">
+            </h2>
+        </div>
+
+        <div>
+            <h2>
+                <button type="submit">Upload</button>
+            </h2>
+        </div>
+        
+        
+    </form>
+    <br><br><br>
+
+    <!-- Displaying the uploaded image -->
+    <h3> <img src="{{ image_filename }}" alt="Uploaded Image Will Be Displayed Here"><br>
+
+    <!-- Setting a placeholder for the prediction text -->
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
+
